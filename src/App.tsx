@@ -10,6 +10,7 @@ import { Badge } from './components/ui/badge';
 import { RadioGroup, RadioGroupItem } from './components/ui/radio-group';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './components/ui/select';
 import { Slider } from './components/ui/slider';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './components/ui/carousel';
 import yamanPhoto from 'figma:asset/62ea924c00b12b7a7ac23d7f281dd070e0528c69.png';
 import { BookConsultation } from './components/BookConsultation';
 
@@ -87,12 +88,13 @@ export default function App() {
       <header className="bg-slate-900/95 backdrop-blur-sm border-b border-slate-800 sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div>
-            <h1 className="text-amber-400 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Realtor Yadav</h1>
+            <h1 className="text-amber-400 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Yaman Yadav</h1>
             <p className="text-xs text-slate-400">Edmonton Real Estate Expert</p>
           </div>
           <div className="flex items-center gap-6">
             <button onClick={() => scrollToSection('about')} className="hidden md:inline text-slate-300 hover:text-amber-400 transition bg-transparent border-0 cursor-pointer p-0">About Me</button>
             <button onClick={() => scrollToSection('services')} className="hidden md:inline text-slate-300 hover:text-amber-400 transition bg-transparent border-0 cursor-pointer p-0">Services</button>
+            <button onClick={() => scrollToSection('service-area')} className="hidden md:inline text-slate-300 hover:text-amber-400 transition bg-transparent border-0 cursor-pointer p-0">Service Areas</button>
             <button onClick={() => scrollToSection('contact')} className="hidden md:inline text-slate-300 hover:text-amber-400 transition bg-transparent border-0 cursor-pointer p-0">FAQ</button>
             <button 
               onClick={() => scrollToSection('contact')} 
@@ -131,7 +133,7 @@ export default function App() {
                 </p>
 
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 mb-8 border border-white/20">
-                  <h4 className="text-white mb-4">Why Choose Realtor Yadav?</h4>
+                  <h4 className="text-white mb-4">Why Choose Yaman Yadav?</h4>
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
                       <div className="bg-amber-500 rounded-full p-1 mt-1">
@@ -149,7 +151,7 @@ export default function App() {
                       <div className="bg-amber-500 rounded-full p-1 mt-1">
                         <CheckCircle className="w-4 h-4 text-slate-900" />
                       </div>
-                      <p className="text-gray-200">Proven track record with 100+ satisfied clients</p>
+                      <p className="text-gray-200">Proven track record with 50+ satisfied clients</p>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="bg-amber-500 rounded-full p-1 mt-1">
@@ -394,11 +396,11 @@ export default function App() {
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               <div className="p-6 bg-white/5 rounded-xl backdrop-blur-sm border border-white/10 hover:bg-white/10 transition">
-                <div className="text-amber-400 mb-2 text-4xl md:text-5xl">100+</div>
+                <div className="text-amber-400 mb-2 text-4xl md:text-5xl">50+</div>
                 <p className="text-slate-300">Happy Clients</p>
               </div>
               <div className="p-6 bg-white/5 rounded-xl backdrop-blur-sm border border-white/10 hover:bg-white/10 transition">
-                <div className="text-amber-400 mb-2 text-4xl md:text-5xl">5+</div>
+                <div className="text-amber-400 mb-2 text-4xl md:text-5xl">2</div>
                 <p className="text-slate-300">Years Experience</p>
               </div>
               <div className="p-6 bg-white/5 rounded-xl backdrop-blur-sm border border-white/10 hover:bg-white/10 transition">
@@ -406,7 +408,7 @@ export default function App() {
                 <p className="text-slate-300">Satisfaction Rate</p>
               </div>
               <div className="p-6 bg-white/5 rounded-xl backdrop-blur-sm border border-white/10 hover:bg-white/10 transition">
-                <div className="text-amber-400 mb-2 text-4xl md:text-5xl">$50M+</div>
+                <div className="text-amber-400 mb-2 text-4xl md:text-5xl">$25M+</div>
                 <p className="text-slate-300">In Sales</p>
               </div>
             </div>
@@ -451,7 +453,7 @@ export default function App() {
                 <Card className="bg-gradient-to-br from-blue-500/20 to-blue-600/20 border-blue-500/30 backdrop-blur-sm hover:scale-105 transition">
                   <CardContent className="pt-6 text-center">
                     <Award className="w-8 h-8 text-blue-400 mx-auto mb-2" />
-                    <div className="text-3xl text-white mb-1">5+</div>
+                    <div className="text-3xl text-white mb-1">2</div>
                     <p className="text-slate-300 text-sm">Years Experience</p>
                   </CardContent>
                 </Card>
@@ -459,7 +461,7 @@ export default function App() {
                 <Card className="bg-gradient-to-br from-amber-500/20 to-amber-600/20 border-amber-500/30 backdrop-blur-sm hover:scale-105 transition">
                   <CardContent className="pt-6 text-center">
                     <Users className="w-8 h-8 text-amber-400 mx-auto mb-2" />
-                    <div className="text-3xl text-white mb-1">100+</div>
+                    <div className="text-3xl text-white mb-1">50+</div>
                     <p className="text-slate-300 text-sm">Happy Clients</p>
                   </CardContent>
                 </Card>
@@ -467,16 +469,8 @@ export default function App() {
                 <Card className="bg-gradient-to-br from-green-500/20 to-green-600/20 border-green-500/30 backdrop-blur-sm hover:scale-105 transition">
                   <CardContent className="pt-6 text-center">
                     <DollarSign className="w-8 h-8 text-green-400 mx-auto mb-2" />
-                    <div className="text-3xl text-white mb-1">$50M+</div>
+                    <div className="text-3xl text-white mb-1">$25M+</div>
                     <p className="text-slate-300 text-sm">In Sales</p>
-                  </CardContent>
-                </Card>
-
-                <Card className="bg-gradient-to-br from-purple-500/20 to-purple-600/20 border-purple-500/30 backdrop-blur-sm hover:scale-105 transition">
-                  <CardContent className="pt-6 text-center">
-                    <Star className="w-8 h-8 text-purple-400 mx-auto mb-2" />
-                    <div className="text-3xl text-white mb-1">4.9★</div>
-                    <p className="text-slate-300 text-sm">Client Rating</p>
                   </CardContent>
                 </Card>
               </div>
@@ -738,7 +732,7 @@ export default function App() {
       {/* Testimonials */}
       <section className="py-20 bg-slate-900">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <Badge className="mb-6 bg-green-500/20 text-green-400 border-green-500/50">Testimonials</Badge>
               <h2 className="mb-4 text-white">What Clients Say</h2>
@@ -747,79 +741,437 @@ export default function App() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
-              <Card className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition">
-                <CardContent className="pt-6">
-                  <div className="flex gap-1 mb-4">
-                    <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
-                    <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
-                    <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
-                    <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
-                    <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
-                  </div>
-                  <p className="text-slate-300 mb-6 italic">
-                    "Yaman made our first home purchase stress-free. He explained everything clearly, was patient with all our questions, and found us the perfect starter home in our budget."
-                  </p>
-                  <div className="flex items-center gap-3 pt-4 border-t border-white/10">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
-                      <span className="text-white">AK</span>
-                    </div>
-                    <div>
-                      <p className="text-white">Anita K.</p>
-                      <p className="text-sm text-slate-400">First-Time Buyer</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-2 md:-ml-4">
+                {/* Testimonial 1 */}
+                <CarouselItem className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                  <Card className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition h-full">
+                    <CardContent className="pt-6">
+                      <div className="flex gap-1 mb-4">
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                      </div>
+                      <p className="text-slate-300 mb-6 italic">
+                        "Yaman made our first home purchase stress-free. He explained everything clearly, was patient with all our questions, and found us the perfect starter home in our budget."
+                      </p>
+                      <div className="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+                          <span className="text-white">AK</span>
+                        </div>
+                        <div>
+                          <p className="text-white">Anita K.</p>
+                          <p className="text-sm text-slate-400">First-Time Buyer</p>
+                          <p className="text-xs text-slate-500 mt-1">March 2024</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
 
-              <Card className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition">
-                <CardContent className="pt-6">
-                  <div className="flex gap-1 mb-4">
-                    <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
-                    <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
-                    <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
-                    <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
-                    <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
-                  </div>
-                  <p className="text-slate-300 mb-6 italic">
-                    "Sold our home above asking price in less than a week! Yaman's marketing strategy and negotiation skills are exceptional. Highly recommend!"
-                  </p>
-                  <div className="flex items-center gap-3 pt-4 border-t border-white/10">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center">
-                      <span className="text-white">HS</span>
-                    </div>
-                    <div>
-                      <p className="text-white">Harpreet S.</p>
-                      <p className="text-sm text-slate-400">Home Seller</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                {/* Testimonial 2 */}
+                <CarouselItem className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                  <Card className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition h-full">
+                    <CardContent className="pt-6">
+                      <div className="flex gap-1 mb-4">
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                      </div>
+                      <p className="text-slate-300 mb-6 italic">
+                        "Sold our home above asking price in less than a week! Yaman's marketing strategy and negotiation skills are exceptional. Highly recommend!"
+                      </p>
+                      <div className="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center">
+                          <span className="text-white">HS</span>
+                        </div>
+                        <div>
+                          <p className="text-white">Harpreet S.</p>
+                          <p className="text-sm text-slate-400">Home Seller</p>
+                          <p className="text-xs text-slate-500 mt-1">July 2024</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
 
-              <Card className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition">
-                <CardContent className="pt-6">
-                  <div className="flex gap-1 mb-4">
-                    <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
-                    <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
-                    <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
-                    <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
-                    <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
-                  </div>
-                  <p className="text-slate-300 mb-6 italic">
-                    "As an investor, I needed someone who understood the numbers. Yaman provided detailed analysis and helped me build a profitable rental property portfolio."
-                  </p>
-                  <div className="flex items-center gap-3 pt-4 border-t border-white/10">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center">
-                      <span className="text-white">RD</span>
-                    </div>
-                    <div>
-                      <p className="text-white">Rajesh D.</p>
-                      <p className="text-sm text-slate-400">Real Estate Investor</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
+                {/* Testimonial 3 */}
+                <CarouselItem className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                  <Card className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition h-full">
+                    <CardContent className="pt-6">
+                      <div className="flex gap-1 mb-4">
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                      </div>
+                      <p className="text-slate-300 mb-6 italic">
+                        "As an investor, I needed someone who understood the numbers. Yaman provided detailed analysis and helped me build a profitable rental property portfolio."
+                      </p>
+                      <div className="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center">
+                          <span className="text-white">RD</span>
+                        </div>
+                        <div>
+                          <p className="text-white">Rajesh D.</p>
+                          <p className="text-sm text-slate-400">Real Estate Investor</p>
+                          <p className="text-xs text-slate-500 mt-1">September 2024</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+
+                {/* Testimonial 4 */}
+                <CarouselItem className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                  <Card className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition h-full">
+                    <CardContent className="pt-6">
+                      <div className="flex gap-1 mb-4">
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                      </div>
+                      <p className="text-slate-300 mb-6 italic">
+                        "Moving from another province was stressful, but Yaman made it easy. He sent video tours, coordinated everything remotely, and we closed smoothly. Couldn't have done it without him!"
+                      </p>
+                      <div className="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-pink-500 to-pink-600 flex items-center justify-center">
+                          <span className="text-white">ML</span>
+                        </div>
+                        <div>
+                          <p className="text-white">Maria L.</p>
+                          <p className="text-sm text-slate-400">Out-of-Province Buyer</p>
+                          <p className="text-xs text-slate-500 mt-1">January 2024</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+
+                {/* Testimonial 5 */}
+                <CarouselItem className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                  <Card className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition h-full">
+                    <CardContent className="pt-6">
+                      <div className="flex gap-1 mb-4">
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                      </div>
+                      <p className="text-slate-300 mb-6 italic">
+                        "Yaman helped us find our dream family home in St. Albert. He understood our needs perfectly and showed us properties that matched our lifestyle. Professional and knowledgeable!"
+                      </p>
+                      <div className="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center">
+                          <span className="text-white">TC</span>
+                        </div>
+                        <div>
+                          <p className="text-white">Thomas C.</p>
+                          <p className="text-sm text-slate-400">Family Home Buyer</p>
+                          <p className="text-xs text-slate-500 mt-1">May 2024</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+
+                {/* Testimonial 6 */}
+                <CarouselItem className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                  <Card className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition h-full">
+                    <CardContent className="pt-6">
+                      <div className="flex gap-1 mb-4">
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                      </div>
+                      <p className="text-slate-300 mb-6 italic">
+                        "Excellent service! Yaman's knowledge of the Sherwood Park market is outstanding. He negotiated a great deal and made the entire buying process enjoyable."
+                      </p>
+                      <div className="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center">
+                          <span className="text-white">JW</span>
+                        </div>
+                        <div>
+                          <p className="text-white">Jennifer W.</p>
+                          <p className="text-sm text-slate-400">Home Buyer</p>
+                          <p className="text-xs text-slate-500 mt-1">August 2024</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+
+                {/* Testimonial 7 */}
+                <CarouselItem className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                  <Card className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition h-full">
+                    <CardContent className="pt-6">
+                      <div className="flex gap-1 mb-4">
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                      </div>
+                      <p className="text-slate-300 mb-6 italic">
+                        "We were downsizing and Yaman made the transition seamless. He sold our large home quickly and found us the perfect condo downtown. Couldn't be happier!"
+                      </p>
+                      <div className="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center">
+                          <span className="text-white">DB</span>
+                        </div>
+                        <div>
+                          <p className="text-white">David B.</p>
+                          <p className="text-sm text-slate-400">Downsizing Client</p>
+                          <p className="text-xs text-slate-500 mt-1">February 2024</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+
+                {/* Testimonial 8 */}
+                <CarouselItem className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                  <Card className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition h-full">
+                    <CardContent className="pt-6">
+                      <div className="flex gap-1 mb-4">
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                      </div>
+                      <p className="text-slate-300 mb-6 italic">
+                        "Outstanding realtor! Yaman helped us navigate a competitive market and secure our offer on a beautiful home in Spruce Grove. His guidance was invaluable."
+                      </p>
+                      <div className="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-500 to-cyan-600 flex items-center justify-center">
+                          <span className="text-white">SP</span>
+                        </div>
+                        <div>
+                          <p className="text-white">Sarah P.</p>
+                          <p className="text-sm text-slate-400">Home Buyer</p>
+                          <p className="text-xs text-slate-500 mt-1">June 2024</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+
+                {/* Testimonial 9 */}
+                <CarouselItem className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                  <Card className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition h-full">
+                    <CardContent className="pt-6">
+                      <div className="flex gap-1 mb-4">
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                      </div>
+                      <p className="text-slate-300 mb-6 italic">
+                        "Yaman is the best! He went above and beyond to help us sell our investment property. His market analysis was spot-on, and we got an amazing price. Thank you!"
+                      </p>
+                      <div className="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-rose-500 to-rose-600 flex items-center justify-center">
+                          <span className="text-white">KM</span>
+                        </div>
+                        <div>
+                          <p className="text-white">Kevin M.</p>
+                          <p className="text-sm text-slate-400">Property Investor</p>
+                          <p className="text-xs text-slate-500 mt-1">April 2024</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+
+                {/* Testimonial 10 */}
+                <CarouselItem className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                  <Card className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition h-full">
+                    <CardContent className="pt-6">
+                      <div className="flex gap-1 mb-4">
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                      </div>
+                      <p className="text-slate-300 mb-6 italic">
+                        "Professional, responsive, and results-driven. Yaman listed our home with beautiful photos and marketing. We had multiple offers within 3 days. Highly recommended!"
+                      </p>
+                      <div className="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-lime-500 to-lime-600 flex items-center justify-center">
+                          <span className="text-white">NR</span>
+                        </div>
+                        <div>
+                          <p className="text-white">Nicole R.</p>
+                          <p className="text-sm text-slate-400">Home Seller</p>
+                          <p className="text-xs text-slate-500 mt-1">October 2024</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+
+                {/* Testimonial 11 */}
+                <CarouselItem className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                  <Card className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition h-full">
+                    <CardContent className="pt-6">
+                      <div className="flex gap-1 mb-4">
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                      </div>
+                      <p className="text-slate-300 mb-6 italic">
+                        "As a single parent, buying a home felt overwhelming. Yaman was patient, understanding, and helped me find a safe neighborhood with great schools. Forever grateful!"
+                      </p>
+                      <div className="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-violet-500 to-violet-600 flex items-center justify-center">
+                          <span className="text-white">LP</span>
+                        </div>
+                        <div>
+                          <p className="text-white">Lisa P.</p>
+                          <p className="text-sm text-slate-400">First-Time Buyer</p>
+                          <p className="text-xs text-slate-500 mt-1">November 2023</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+
+                {/* Testimonial 12 */}
+                <CarouselItem className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                  <Card className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition h-full">
+                    <CardContent className="pt-6">
+                      <div className="flex gap-1 mb-4">
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                      </div>
+                      <p className="text-slate-300 mb-6 italic">
+                        "Yaman helped us upgrade to a larger home as our family grew. He managed the timing perfectly so we could sell and buy simultaneously. Stress-free experience!"
+                      </p>
+                      <div className="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center">
+                          <span className="text-white">AF</span>
+                        </div>
+                        <div>
+                          <p className="text-white">Ahmed F.</p>
+                          <p className="text-sm text-slate-400">Growing Family</p>
+                          <p className="text-xs text-slate-500 mt-1">December 2023</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+
+                {/* Testimonial 13 */}
+                <CarouselItem className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                  <Card className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition h-full">
+                    <CardContent className="pt-6">
+                      <div className="flex gap-1 mb-4">
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                      </div>
+                      <p className="text-slate-300 mb-6 italic">
+                        "Working with Yaman was a pleasure. His attention to detail and market knowledge helped us find an excellent investment opportunity. We've already recommended him to friends!"
+                      </p>
+                      <div className="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-fuchsia-500 to-fuchsia-600 flex items-center justify-center">
+                          <span className="text-white">BC</span>
+                        </div>
+                        <div>
+                          <p className="text-white">Brandon C.</p>
+                          <p className="text-sm text-slate-400">Investment Buyer</p>
+                          <p className="text-xs text-slate-500 mt-1">September 2023</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+
+                {/* Testimonial 14 */}
+                <CarouselItem className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                  <Card className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition h-full">
+                    <CardContent className="pt-6">
+                      <div className="flex gap-1 mb-4">
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                      </div>
+                      <p className="text-slate-300 mb-6 italic">
+                        "Exceptional service from start to finish! Yaman's expertise and dedication ensured we got the best value for our property. Would work with him again in a heartbeat!"
+                      </p>
+                      <div className="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-sky-500 to-sky-600 flex items-center justify-center">
+                          <span className="text-white">EG</span>
+                        </div>
+                        <div>
+                          <p className="text-white">Emily G.</p>
+                          <p className="text-sm text-slate-400">Home Seller</p>
+                          <p className="text-xs text-slate-500 mt-1">August 2023</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+
+                {/* Testimonial 15 */}
+                <CarouselItem className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                  <Card className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition h-full">
+                    <CardContent className="pt-6">
+                      <div className="flex gap-1 mb-4">
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                        <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                      </div>
+                      <p className="text-slate-300 mb-6 italic">
+                        "Yaman is thorough, honest, and genuinely cares about his clients. He helped us navigate a complex purchase and made sure we understood every step. True professional!"
+                      </p>
+                      <div className="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center">
+                          <span className="text-white">GH</span>
+                        </div>
+                        <div>
+                          <p className="text-white">Grace H.</p>
+                          <p className="text-sm text-slate-400">Home Buyer</p>
+                          <p className="text-xs text-slate-500 mt-1">July 2023</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious className="hidden lg:flex -left-12 bg-white/10 border-white/20 hover:bg-white/20 text-white" />
+              <CarouselNext className="hidden lg:flex -right-12 bg-white/10 border-white/20 hover:bg-white/20 text-white" />
+            </Carousel>
           </div>
         </div>
       </section>
@@ -832,7 +1184,7 @@ export default function App() {
               <Badge className="mb-6 bg-purple-500/20 text-purple-400 border-purple-500/50">Benefits</Badge>
               <h2 className="mb-4 text-white">Why Work With Me?</h2>
               <p className="text-xl text-slate-300">
-                The advantages of choosing Realtor Yadav
+                The advantages of choosing Yaman Yadav
               </p>
             </div>
 
@@ -908,6 +1260,208 @@ export default function App() {
                   </p>
                 </CardContent>
               </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Service Area Section */}
+      <section id="service-area" className="py-20 bg-slate-900">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <Badge className="mb-6 bg-amber-500/20 text-amber-400 border-amber-500/50">Coverage</Badge>
+              <h2 className="mb-4 text-white">Service Areas</h2>
+              <p className="text-xl text-slate-300">
+                Proudly serving Alberta's vibrant communities
+              </p>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Interactive Map */}
+              <div className="relative">
+                <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+                  <svg viewBox="0 0 400 500" className="w-full h-auto">
+                    {/* Background */}
+                    <rect x="0" y="0" width="400" height="500" fill="transparent" />
+                    
+                    {/* St. Albert - North */}
+                    <g className="cursor-pointer transition-all hover:opacity-80 group">
+                      <ellipse cx="200" cy="100" rx="70" ry="50" 
+                        fill="url(#gradient1)" 
+                        opacity="0.3"
+                        className="group-hover:opacity-50 transition-opacity" />
+                      <text x="200" y="95" textAnchor="middle" className="fill-white text-sm">
+                        St. Albert
+                      </text>
+                      <circle cx="200" cy="110" r="4" fill="#fbbf24" className="animate-pulse" />
+                    </g>
+
+                    {/* Spruce Grove - West */}
+                    <g className="cursor-pointer transition-all hover:opacity-80 group">
+                      <ellipse cx="90" cy="250" rx="65" ry="55" 
+                        fill="url(#gradient2)" 
+                        opacity="0.3"
+                        className="group-hover:opacity-50 transition-opacity" />
+                      <text x="90" y="245" textAnchor="middle" className="fill-white text-sm">
+                        Spruce
+                      </text>
+                      <text x="90" y="260" textAnchor="middle" className="fill-white text-sm">
+                        Grove
+                      </text>
+                      <circle cx="90" cy="270" r="4" fill="#fbbf24" className="animate-pulse" />
+                    </g>
+
+                    {/* Edmonton - Center */}
+                    <g className="cursor-pointer transition-all hover:opacity-80 group">
+                      <circle cx="200" cy="250" r="85" 
+                        fill="url(#gradient3)" 
+                        opacity="0.4"
+                        className="group-hover:opacity-60 transition-opacity" />
+                      <text x="200" y="250" textAnchor="middle" className="fill-white">
+                        Edmonton
+                      </text>
+                      <circle cx="200" cy="265" r="5" fill="#fbbf24" className="animate-pulse" />
+                    </g>
+
+                    {/* Sherwood Park - East */}
+                    <g className="cursor-pointer transition-all hover:opacity-80 group">
+                      <ellipse cx="310" cy="250" rx="65" ry="55" 
+                        fill="url(#gradient4)" 
+                        opacity="0.3"
+                        className="group-hover:opacity-50 transition-opacity" />
+                      <text x="310" y="245" textAnchor="middle" className="fill-white text-sm">
+                        Sherwood
+                      </text>
+                      <text x="310" y="260" textAnchor="middle" className="fill-white text-sm">
+                        Park
+                      </text>
+                      <circle cx="310" cy="270" r="4" fill="#fbbf24" className="animate-pulse" />
+                    </g>
+
+                    {/* Greater Edmonton - Outer Circle */}
+                    <g className="cursor-pointer transition-all hover:opacity-80 group">
+                      <circle cx="200" cy="250" r="140" 
+                        fill="none" 
+                        stroke="url(#gradient5)" 
+                        strokeWidth="2"
+                        strokeDasharray="10,5"
+                        opacity="0.5"
+                        className="group-hover:opacity-80 transition-opacity" />
+                      <text x="200" y="410" textAnchor="middle" className="fill-amber-400 text-xs">
+                        Greater Edmonton Area
+                      </text>
+                    </g>
+
+                    {/* Gradients */}
+                    <defs>
+                      <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style={{ stopColor: '#3b82f6', stopOpacity: 1 }} />
+                        <stop offset="100%" style={{ stopColor: '#8b5cf6', stopOpacity: 1 }} />
+                      </linearGradient>
+                      <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style={{ stopColor: '#10b981', stopOpacity: 1 }} />
+                        <stop offset="100%" style={{ stopColor: '#3b82f6', stopOpacity: 1 }} />
+                      </linearGradient>
+                      <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style={{ stopColor: '#f59e0b', stopOpacity: 1 }} />
+                        <stop offset="100%" style={{ stopColor: '#ef4444', stopOpacity: 1 }} />
+                      </linearGradient>
+                      <linearGradient id="gradient4" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style={{ stopColor: '#8b5cf6', stopOpacity: 1 }} />
+                        <stop offset="100%" style={{ stopColor: '#ec4899', stopOpacity: 1 }} />
+                      </linearGradient>
+                      <linearGradient id="gradient5" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style={{ stopColor: '#fbbf24', stopOpacity: 1 }} />
+                        <stop offset="100%" style={{ stopColor: '#f59e0b', stopOpacity: 1 }} />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </div>
+              </div>
+
+              {/* Service Area List */}
+              <div className="space-y-6">
+                <Card className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition group">
+                  <CardContent className="pt-6">
+                    <div className="flex items-start gap-4">
+                      <div className="bg-gradient-to-br from-amber-500 to-red-600 w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                        <Building2 className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-white mb-2">Edmonton</h4>
+                        <p className="text-slate-400 text-sm">
+                          Complete coverage of all Edmonton neighborhoods, from downtown condos to suburban family homes.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition group">
+                  <CardContent className="pt-6">
+                    <div className="flex items-start gap-4">
+                      <div className="bg-gradient-to-br from-blue-500 to-purple-600 w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                        <MapPin className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-white mb-2">St. Albert</h4>
+                        <p className="text-slate-400 text-sm">
+                          Serving the vibrant community of St. Albert with expert knowledge of local amenities and schools.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition group">
+                  <CardContent className="pt-6">
+                    <div className="flex items-start gap-4">
+                      <div className="bg-gradient-to-br from-purple-500 to-pink-600 w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                        <Home className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-white mb-2">Sherwood Park</h4>
+                        <p className="text-slate-400 text-sm">
+                          Expert guidance in Sherwood Park's diverse housing market and family-friendly communities.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition group">
+                  <CardContent className="pt-6">
+                    <div className="flex items-start gap-4">
+                      <div className="bg-gradient-to-br from-green-500 to-blue-600 w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                        <Target className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-white mb-2">Spruce Grove</h4>
+                        <p className="text-slate-400 text-sm">
+                          Comprehensive service in Spruce Grove's growing residential and commercial markets.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-gradient-to-br from-amber-500/10 to-blue-500/10 border-amber-500/30 backdrop-blur-sm">
+                  <CardContent className="pt-6">
+                    <div className="flex items-start gap-4">
+                      <div className="bg-gradient-to-br from-amber-400 to-amber-600 w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <Sparkles className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-white mb-2">Greater Edmonton</h4>
+                        <p className="text-slate-400 text-sm">
+                          Extended coverage throughout the Greater Edmonton Area and surrounding communities.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </div>
         </div>
@@ -1019,7 +1573,7 @@ export default function App() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
             <div>
-              <h3 className="text-amber-400 mb-4">Realtor Yadav</h3>
+              <h3 className="text-amber-400 mb-4">Yaman Yadav</h3>
               <p className="text-slate-400 mb-4">
                 Your trusted Edmonton real estate expert, dedicated to helping you find your dream home.
               </p>
@@ -1027,7 +1581,7 @@ export default function App() {
                 <a href="tel:587-568-8591" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:text-amber-400 hover:bg-white/10 transition">
                   <Phone className="w-5 h-5" />
                 </a>
-                <a href="mailto:yaman@realtoryadav.com" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:text-amber-400 hover:bg-white/10 transition">
+                <a href="mailto:contact@yamanyadav.com" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:text-amber-400 hover:bg-white/10 transition">
                   <Mail className="w-5 h-5" />
                 </a>
               </div>
@@ -1052,18 +1606,23 @@ export default function App() {
                 </li>
                 <li className="flex items-start gap-2">
                   <Mail className="w-5 h-5 flex-shrink-0 mt-0.5 text-amber-400" />
-                  <a href="mailto:yaman@realtoryadav.com" className="hover:text-amber-400 transition">yaman@realtoryadav.com</a>
+                  <a href="mailto:contact@yamanyadav.com" className="hover:text-amber-400 transition">contact@yamanyadav.com</a>
                 </li>
                 <li className="flex items-start gap-2">
                   <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5 text-amber-400" />
-                  <span>Serving Edmonton & Surrounding Areas</span>
+                  <div>
+                    <div className="mb-1">Service Areas:</div>
+                    <div className="text-sm text-slate-400">
+                      Edmonton • Greater Edmonton • Sherwood Park • Spruce Grove • St. Albert
+                    </div>
+                  </div>
                 </li>
               </ul>
             </div>
           </div>
 
           <div className="max-w-6xl mx-auto mt-12 pt-8 border-t border-slate-800 text-center text-slate-500 text-sm">
-            <p>© 2025 Realtor Yadav. All rights reserved. | Licensed REALTOR® serving Edmonton, AB</p>
+            <p>© 2025 Yaman Yadav. All rights reserved. | Licensed REALTOR® serving Edmonton, Greater Edmonton, Sherwood Park, Spruce Grove & St. Albert</p>
           </div>
         </div>
       </footer>

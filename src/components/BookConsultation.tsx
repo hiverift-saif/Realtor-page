@@ -77,7 +77,7 @@ export function BookConsultation({ onBack }: BookConsultationProps) {
               </button>
             </div>
             <div>
-              <h1 className="text-amber-400">Realtor Yadav</h1>
+              <h1 className="text-amber-400">Yaman Yadav</h1>
               <p className="text-xs text-slate-400 text-right">Edmonton Real Estate Expert</p>
             </div>
           </div>
@@ -119,14 +119,7 @@ export function BookConsultation({ onBack }: BookConsultationProps) {
                       </div>
                       <h3 className="text-white mb-1">Yaman Yadav</h3>
                       <p className="text-slate-400 text-sm">Licensed REALTOR®</p>
-                      <div className="flex items-center gap-1 mt-2">
-                        <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
-                        <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
-                        <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
-                        <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
-                        <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
-                        <span className="text-slate-400 text-sm ml-1">(4.9)</span>
-                      </div>
+
                     </div>
 
                     <div className="space-y-4">
@@ -144,8 +137,8 @@ export function BookConsultation({ onBack }: BookConsultationProps) {
                         <Mail className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
                         <div>
                           <p className="text-xs text-slate-500 mb-1">Email</p>
-                          <a href="mailto:yaman@realtoryadav.com" className="text-slate-200 hover:text-amber-400 transition break-all">
-                            yaman@realtoryadav.com
+                          <a href="mailto:contact@yamanyadav.com" className="text-slate-200 hover:text-amber-400 transition break-all">
+                            contact@yamanyadav.com
                           </a>
                         </div>
                       </div>
@@ -153,8 +146,10 @@ export function BookConsultation({ onBack }: BookConsultationProps) {
                       <div className="flex items-start gap-3 p-3 bg-white/5 rounded-lg">
                         <MapPin className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
                         <div>
-                          <p className="text-xs text-slate-500 mb-1">Service Area</p>
-                          <p className="text-slate-200">Edmonton & Surrounding Areas</p>
+                          <p className="text-xs text-slate-500 mb-1">Service Areas</p>
+                          <p className="text-slate-200 text-sm">
+                            Edmonton • Greater Edmonton • Sherwood Park • Spruce Grove • St. Albert
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -166,7 +161,7 @@ export function BookConsultation({ onBack }: BookConsultationProps) {
                   <Card className="bg-gradient-to-br from-blue-500/20 to-blue-600/20 border-blue-500/30 backdrop-blur-sm">
                     <CardContent className="pt-6 text-center">
                       <Award className="w-6 h-6 text-blue-400 mx-auto mb-2" />
-                      <div className="text-2xl text-white mb-1">5+</div>
+                      <div className="text-2xl text-white mb-1">2</div>
                       <p className="text-slate-300 text-xs">Years Exp.</p>
                     </CardContent>
                   </Card>
@@ -174,7 +169,7 @@ export function BookConsultation({ onBack }: BookConsultationProps) {
                   <Card className="bg-gradient-to-br from-amber-500/20 to-amber-600/20 border-amber-500/30 backdrop-blur-sm">
                     <CardContent className="pt-6 text-center">
                       <HomeIcon className="w-6 h-6 text-amber-400 mx-auto mb-2" />
-                      <div className="text-2xl text-white mb-1">100+</div>
+                      <div className="text-2xl text-white mb-1">50+</div>
                       <p className="text-slate-300 text-xs">Happy Clients</p>
                     </CardContent>
                   </Card>
@@ -588,22 +583,18 @@ export function BookConsultation({ onBack }: BookConsultationProps) {
       <section className="py-8 bg-slate-950 border-t border-slate-800">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+            <div className="grid grid-cols-3 gap-4 text-center">
               <div className="p-4">
-                <div className="text-2xl md:text-3xl text-amber-400 mb-1">5+</div>
+                <div className="text-2xl md:text-3xl text-amber-400 mb-1">2</div>
                 <p className="text-slate-400 text-xs md:text-sm">Years Experience</p>
               </div>
               <div className="p-4">
-                <div className="text-2xl md:text-3xl text-amber-400 mb-1">100+</div>
+                <div className="text-2xl md:text-3xl text-amber-400 mb-1">50+</div>
                 <p className="text-slate-400 text-xs md:text-sm">Happy Clients</p>
               </div>
               <div className="p-4">
-                <div className="text-2xl md:text-3xl text-amber-400 mb-1">$50M+</div>
+                <div className="text-2xl md:text-3xl text-amber-400 mb-1">$25M+</div>
                 <p className="text-slate-400 text-xs md:text-sm">In Sales</p>
-              </div>
-              <div className="p-4">
-                <div className="text-2xl md:text-3xl text-amber-400 mb-1">4.9★</div>
-                <p className="text-slate-400 text-xs md:text-sm">Client Rating</p>
               </div>
             </div>
           </div>
