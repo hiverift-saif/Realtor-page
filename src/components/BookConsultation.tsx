@@ -62,23 +62,26 @@ export function BookConsultation({ onBack }: BookConsultationProps) {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900">
+    <div className="min-h-screen" style={{ backgroundColor: '#FEF8F2' }}>
       {/* Header */}
-      <header className="bg-slate-900/95 backdrop-blur-sm border-b border-slate-800 sticky top-0 z-50">
+      <header className="backdrop-blur-sm border-b sticky top-0 z-50" style={{ backgroundColor: 'rgba(255, 255, 255, 0.95)', borderColor: '#E0E0E1' }}>
         <div className="container mx-auto px-4 py-4">
           <div className="max-w-5xl mx-auto flex justify-between items-center">
             <div className="flex items-center gap-4">
               <button 
                 onClick={onBack}
-                className="flex items-center gap-2 text-slate-300 hover:text-amber-400 transition bg-transparent border-0 cursor-pointer p-0"
+                className="flex items-center gap-2 transition bg-transparent border-0 cursor-pointer p-0"
+                style={{ color: '#141819' }}
+                onMouseEnter={(e) => e.currentTarget.style.color = '#C7A76C'}
+                onMouseLeave={(e) => e.currentTarget.style.color = '#141819'}
               >
                 <ArrowLeft className="w-5 h-5" />
                 <span className="hidden sm:inline">Back to Home</span>
               </button>
             </div>
             <div>
-              <h1 className="text-amber-400">Yaman Yadav</h1>
-              <p className="text-xs text-slate-400 text-right">Edmonton Real Estate Expert</p>
+              <h1 style={{ color: '#C7A76C' }}>Yaman Yadav</h1>
+              <p className="text-xs text-right" style={{ color: '#1C1C1C' }}>Edmonton Real Estate Expert</p>
             </div>
           </div>
         </div>
