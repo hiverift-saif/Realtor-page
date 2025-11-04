@@ -20,7 +20,8 @@ import {
   Calendar,
   MapPin,
   Building2,
-  Sparkles
+  Sparkles,
+  Loader2
 } from 'lucide-react';
 
 interface PopupConsultationFormProps {
@@ -31,6 +32,7 @@ interface PopupConsultationFormProps {
 export function PopupConsultationForm({ open, onOpenChange }: PopupConsultationFormProps) {
   const [formStep, setFormStep] = useState(1);
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -58,16 +60,53 @@ export function PopupConsultationForm({ open, onOpenChange }: PopupConsultationF
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+
+    const payload = {
+      formType: "rightpricepumps",
+      firstName: formData.firstName.trim(),
+      lastName: formData.lastName.trim(),
+      email: formData.email.trim(),
+      phone: formData.phone.trim(),
+      goal: formData.goal,
+      firstHouse: formData.firstHouse,
+      budget: formData.budget,
+      timeline: formData.timeline,
+      location: formData.location.trim(),
+      propertyType: formData.propertyType,
+      additionalInfo: formData.additionalInfo.trim()
+    };
+
+    try {
+      const response = await fetch('https://cakistockmarket.com/api/v1/contact/createRightPricePumpsContact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.statusCode === 201) {
+        setSubmitted(true);
+      } else {
+        alert(data.message || 'Submission failed. Please try again.');
+        setLoading(false);
+      }
+    } catch (err) {
+      alert('Network error. Please check your connection.');
+      setLoading(false);
+    }
   };
 
   const handleClose = () => {
     onOpenChange(false);
-    // Reset form after closing
     setTimeout(() => {
       setSubmitted(false);
+      setLoading(false);
       setFormStep(1);
       setFormData({
         firstName: '',
@@ -613,6 +652,7 @@ export function PopupConsultationForm({ open, onOpenChange }: PopupConsultationF
                     </Button>
                     <Button 
                       type="submit" 
+                      disabled={loading}
                       className="w-full sm:w-2/3 shadow-xl" 
                       size="lg"
                       style={{ 
@@ -620,8 +660,17 @@ export function PopupConsultationForm({ open, onOpenChange }: PopupConsultationF
                         boxShadow: '0 6px 25px rgba(199, 167, 108, 0.4)'
                       }}
                     >
-                      Submit Request
-                      <CheckCircle className="w-5 h-5 ml-2" />
+                      {loading ? (
+                        <>
+                          Submitting...
+                          <Loader2 className="w-5 h-5 ml-2 animate-spin" />
+                        </>
+                      ) : (
+                        <>
+                          Submit Request
+                          <CheckCircle className="w-5 h-5 ml-2" />
+                        </>
+                      )}
                     </Button>
                   </div>
 

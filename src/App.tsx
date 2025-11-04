@@ -335,7 +335,7 @@ export default function App() {
                               </div>
                             </div>
 
-                            <div>
+                            {/* <div>
                               <Label htmlFor="mortgageStatus">Mortgage Approval Status *</Label>
                               <Select 
                                 required
@@ -353,7 +353,7 @@ export default function App() {
                                   <SelectItem value="cash-buyer">💵 Cash Buyer</SelectItem>
                                 </SelectContent>
                               </Select>
-                            </div>
+                            </div> */}
 
                             <div>
                               <Label htmlFor="propertyType">Property Type *</Label>

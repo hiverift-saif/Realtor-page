@@ -1,18 +1,3 @@
 # Dependencies
 node_modules/
 
-# Build output
-dist/
-build/
-
-# Environment files
-.env
-.env.local
-
-# System files
-.DS_Store
-Thumbs.db
-
-# Editor settings
-.vscode/
-.idea/
