@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Phone, Mail, MapPin, Calendar, CheckCircle, Home, TrendingUp, Users, Award, Clock, Shield, Star, DollarSign, FileText, Search, ChevronDown, ChevronRight, ArrowLeft, Building2, Target, Sparkles } from 'lucide-react';
 import { Button } from './components/ui/button';
 import { Input } from './components/ui/input';
@@ -13,9 +13,11 @@ import { Slider } from './components/ui/slider';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './components/ui/carousel';
 import yamanPhoto from 'figma:asset/62ea924c00b12b7a7ac23d7f281dd070e0528c69.png';
 import { BookConsultation } from './components/BookConsultation';
+import { PopupConsultationForm } from './components/PopupConsultationForm';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<'home' | 'booking'>('home');
+  const [showPopup, setShowPopup] = useState(false);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -77,6 +79,15 @@ export default function App() {
     }
   };
 
+  // Show popup after a short delay when landing on the website
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowPopup(true);
+    }, 1500); // Show popup after 1.5 seconds
+
+    return () => clearTimeout(timer);
+  }, []);
+
   // Show booking page if selected
   if (currentPage === 'booking') {
     return <BookConsultation onBack={() => setCurrentPage('home')} />;
@@ -84,6 +95,8 @@ export default function App() {
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#FEF8F2' }}>
+      {/* Popup Consultation Form */}
+      <PopupConsultationForm open={showPopup} onOpenChange={setShowPopup} />
       {/* Modern Header */}
       <header className="backdrop-blur-sm border-b sticky top-0 z-50 shadow-sm" style={{ backgroundColor: 'rgba(254, 248, 242, 0.98)', borderColor: '#E6E7E8' }}>
         <div className="container mx-auto px-4 py-3 flex justify-between items-center">

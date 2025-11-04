@@ -62,18 +62,18 @@ export function BookConsultation({ onBack }: BookConsultationProps) {
   };
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#FEF8F2' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#1C1C1C' }}>
       {/* Header */}
-      <header className="backdrop-blur-sm border-b sticky top-0 z-50" style={{ backgroundColor: 'rgba(255, 255, 255, 0.95)', borderColor: '#E0E0E1' }}>
+      <header className="backdrop-blur-sm border-b sticky top-0 z-50" style={{ backgroundColor: 'rgba(20, 24, 25, 0.95)', borderColor: 'rgba(199, 167, 108, 0.2)' }}>
         <div className="container mx-auto px-4 py-4">
           <div className="max-w-5xl mx-auto flex justify-between items-center">
             <div className="flex items-center gap-4">
               <button 
                 onClick={onBack}
                 className="flex items-center gap-2 transition bg-transparent border-0 cursor-pointer p-0"
-                style={{ color: '#141819' }}
+                style={{ color: '#E6E7E8' }}
                 onMouseEnter={(e) => e.currentTarget.style.color = '#C7A76C'}
-                onMouseLeave={(e) => e.currentTarget.style.color = '#141819'}
+                onMouseLeave={(e) => e.currentTarget.style.color = '#E6E7E8'}
               >
                 <ArrowLeft className="w-5 h-5" />
                 <span className="hidden sm:inline">Back to Home</span>
@@ -81,7 +81,7 @@ export function BookConsultation({ onBack }: BookConsultationProps) {
             </div>
             <div>
               <h1 style={{ color: '#C7A76C' }}>Yaman Yadav</h1>
-              <p className="text-xs text-right" style={{ color: '#1C1C1C' }}>Edmonton Real Estate Expert</p>
+              <p className="text-xs text-right" style={{ color: '#94A3B8' }}>Edmonton Real Estate Expert</p>
             </div>
           </div>
         </div>
@@ -93,13 +93,13 @@ export function BookConsultation({ onBack }: BookConsultationProps) {
           <div className="max-w-5xl mx-auto">
             {/* Page Header */}
             <div className="text-center mb-8 md:mb-12">
-              <Badge className="mb-4 bg-amber-500/20 text-amber-400 border-amber-500/50">
+              <Badge className="mb-4 border-0" style={{ backgroundColor: '#C7A76C', color: '#141819' }}>
                 Free Consultation
               </Badge>
-              <h1 className="mb-4 text-white text-3xl md:text-4xl lg:text-5xl">
+              <h1 className="mb-4 text-3xl md:text-4xl lg:text-5xl" style={{ color: '#FFFFFF' }}>
                 Book Your Consultation
               </h1>
-              <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto">
+              <p className="text-lg md:text-xl max-w-2xl mx-auto" style={{ color: '#94A3B8' }}>
                 Let's discuss your real estate goals and create a personalized plan for your success
               </p>
             </div>
@@ -109,48 +109,49 @@ export function BookConsultation({ onBack }: BookConsultationProps) {
               {/* Left Column - Agent Info */}
               <div className="lg:col-span-2 space-y-6">
                 {/* Agent Card */}
-                <Card className="bg-white/5 border-white/10 backdrop-blur-sm overflow-hidden">
+                <Card className="border overflow-hidden" style={{ backgroundColor: 'rgba(199, 167, 108, 0.08)', borderColor: 'rgba(199, 167, 108, 0.2)' }}>
                   <CardContent className="p-6">
                     <div className="flex flex-col items-center text-center mb-6">
                       <div className="relative group mb-4">
-                        <div className="absolute -inset-1 bg-gradient-to-r from-amber-500 to-blue-500 rounded-full blur opacity-25 group-hover:opacity-40 transition"></div>
+                        <div className="absolute -inset-1 rounded-full blur opacity-25 group-hover:opacity-40 transition" style={{ background: 'linear-gradient(135deg, #C7A76C 0%, #B89960 100%)' }}></div>
                         <img 
                           src={yamanPhoto}
                           alt="Yaman Yadav"
-                          className="relative w-32 h-32 md:w-40 md:h-40 object-cover rounded-full border-2 border-white/10"
+                          className="relative w-32 h-32 md:w-40 md:h-40 object-cover rounded-full border-2"
+                          style={{ borderColor: 'rgba(199, 167, 108, 0.3)' }}
                         />
                       </div>
-                      <h3 className="text-white mb-1">Yaman Yadav</h3>
-                      <p className="text-slate-400 text-sm">Licensed REALTOR®</p>
+                      <h3 style={{ color: '#FFFFFF' }} className="mb-1">Yaman Yadav</h3>
+                      <p className="text-sm" style={{ color: '#94A3B8' }}>Licensed REALTOR®</p>
 
                     </div>
 
                     <div className="space-y-4">
-                      <div className="flex items-start gap-3 p-3 bg-white/5 rounded-lg">
-                        <Phone className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
+                      <div className="flex items-start gap-3 p-3 rounded-lg" style={{ backgroundColor: 'rgba(199, 167, 108, 0.05)' }}>
+                        <Phone className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: '#C7A76C' }} />
                         <div>
-                          <p className="text-xs text-slate-500 mb-1">Phone</p>
-                          <a href="tel:587-568-8591" className="text-slate-200 hover:text-amber-400 transition">
+                          <p className="text-xs mb-1" style={{ color: '#64748B' }}>Phone</p>
+                          <a href="tel:587-568-8591" className="transition" style={{ color: '#E6E7E8' }} onMouseEnter={(e) => e.currentTarget.style.color = '#C7A76C'} onMouseLeave={(e) => e.currentTarget.style.color = '#E6E7E8'}>
                             587-568-8591
                           </a>
                         </div>
                       </div>
 
-                      <div className="flex items-start gap-3 p-3 bg-white/5 rounded-lg">
-                        <Mail className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
+                      <div className="flex items-start gap-3 p-3 rounded-lg" style={{ backgroundColor: 'rgba(199, 167, 108, 0.05)' }}>
+                        <Mail className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: '#C7A76C' }} />
                         <div>
-                          <p className="text-xs text-slate-500 mb-1">Email</p>
-                          <a href="mailto:contact@yamanyadav.com" className="text-slate-200 hover:text-amber-400 transition break-all">
+                          <p className="text-xs mb-1" style={{ color: '#64748B' }}>Email</p>
+                          <a href="mailto:contact@yamanyadav.com" className="transition break-all" style={{ color: '#E6E7E8' }} onMouseEnter={(e) => e.currentTarget.style.color = '#C7A76C'} onMouseLeave={(e) => e.currentTarget.style.color = '#E6E7E8'}>
                             contact@yamanyadav.com
                           </a>
                         </div>
                       </div>
 
-                      <div className="flex items-start gap-3 p-3 bg-white/5 rounded-lg">
-                        <MapPin className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
+                      <div className="flex items-start gap-3 p-3 rounded-lg" style={{ backgroundColor: 'rgba(199, 167, 108, 0.05)' }}>
+                        <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: '#C7A76C' }} />
                         <div>
-                          <p className="text-xs text-slate-500 mb-1">Service Areas</p>
-                          <p className="text-slate-200 text-sm">
+                          <p className="text-xs mb-1" style={{ color: '#64748B' }}>Service Areas</p>
+                          <p className="text-sm" style={{ color: '#E6E7E8' }}>
                             Edmonton • Greater Edmonton • Sherwood Park • Spruce Grove • St. Albert
                           </p>
                         </div>
@@ -161,50 +162,50 @@ export function BookConsultation({ onBack }: BookConsultationProps) {
 
                 {/* Stats Grid */}
                 <div className="grid grid-cols-2 gap-4">
-                  <Card className="bg-gradient-to-br from-blue-500/20 to-blue-600/20 border-blue-500/30 backdrop-blur-sm">
+                  <Card className="border" style={{ background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(37, 99, 235, 0.15) 100%)', borderColor: 'rgba(59, 130, 246, 0.3)' }}>
                     <CardContent className="pt-6 text-center">
-                      <Award className="w-6 h-6 text-blue-400 mx-auto mb-2" />
-                      <div className="text-2xl text-white mb-1">2</div>
-                      <p className="text-slate-300 text-xs">Years Exp.</p>
+                      <Award className="w-6 h-6 mx-auto mb-2" style={{ color: '#60A5FA' }} />
+                      <div className="text-2xl mb-1" style={{ color: '#FFFFFF' }}>2</div>
+                      <p className="text-xs" style={{ color: '#94A3B8' }}>Years Exp.</p>
                     </CardContent>
                   </Card>
 
-                  <Card className="bg-gradient-to-br from-amber-500/20 to-amber-600/20 border-amber-500/30 backdrop-blur-sm">
+                  <Card className="border" style={{ background: 'linear-gradient(135deg, rgba(199, 167, 108, 0.15) 0%, rgba(184, 153, 96, 0.15) 100%)', borderColor: 'rgba(199, 167, 108, 0.3)' }}>
                     <CardContent className="pt-6 text-center">
-                      <HomeIcon className="w-6 h-6 text-amber-400 mx-auto mb-2" />
-                      <div className="text-2xl text-white mb-1">50+</div>
-                      <p className="text-slate-300 text-xs">Happy Clients</p>
+                      <HomeIcon className="w-6 h-6 mx-auto mb-2" style={{ color: '#C7A76C' }} />
+                      <div className="text-2xl mb-1" style={{ color: '#FFFFFF' }}>50+</div>
+                      <p className="text-xs" style={{ color: '#94A3B8' }}>Happy Clients</p>
                     </CardContent>
                   </Card>
                 </div>
 
                 {/* What to Expect */}
-                <Card className="bg-white/5 border-white/10 backdrop-blur-sm hidden lg:block">
+                <Card className="border hidden lg:block" style={{ backgroundColor: 'rgba(199, 167, 108, 0.08)', borderColor: 'rgba(199, 167, 108, 0.2)' }}>
                   <CardContent className="p-6">
-                    <h4 className="text-white mb-4 flex items-center gap-2">
-                      <Calendar className="w-5 h-5 text-amber-400" />
+                    <h4 className="mb-4 flex items-center gap-2" style={{ color: '#FFFFFF' }}>
+                      <Calendar className="w-5 h-5" style={{ color: '#C7A76C' }} />
                       What to Expect
                     </h4>
                     <ul className="space-y-3 text-sm">
                       <li className="flex items-start gap-2">
-                        <CheckCircle className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-slate-300">Response within 24 hours</span>
+                        <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: '#C7A76C' }} />
+                        <span style={{ color: '#94A3B8' }}>Response within 24 hours</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <CheckCircle className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-slate-300">30-minute free consultation</span>
+                        <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: '#C7A76C' }} />
+                        <span style={{ color: '#94A3B8' }}>30-minute free consultation</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <CheckCircle className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-slate-300">Personalized market insights</span>
+                        <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: '#C7A76C' }} />
+                        <span style={{ color: '#94A3B8' }}>Personalized market insights</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <CheckCircle className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-slate-300">No obligation or pressure</span>
+                        <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: '#C7A76C' }} />
+                        <span style={{ color: '#94A3B8' }}>No obligation or pressure</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <CheckCircle className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-slate-300">Available evenings & weekends</span>
+                        <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: '#C7A76C' }} />
+                        <span style={{ color: '#94A3B8' }}>Available evenings & weekends</span>
                       </li>
                     </ul>
                   </CardContent>
@@ -213,20 +214,20 @@ export function BookConsultation({ onBack }: BookConsultationProps) {
 
               {/* Right Column - Form */}
               <div className="lg:col-span-3">
-                <Card className="shadow-2xl border-white/10 bg-white/5 backdrop-blur-sm">
+                <Card className="shadow-2xl border" style={{ backgroundColor: 'rgba(199, 167, 108, 0.08)', borderColor: 'rgba(199, 167, 108, 0.2)' }}>
                   <CardContent className="p-6 md:p-8">
                     {submitted ? (
                       <div className="text-center py-12">
-                        <div className="bg-green-500/20 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 border border-green-500/30">
-                          <CheckCircle className="w-10 h-10 text-green-400" />
+                        <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 border" style={{ backgroundColor: 'rgba(34, 197, 94, 0.15)', borderColor: 'rgba(34, 197, 94, 0.3)' }}>
+                          <CheckCircle className="w-10 h-10" style={{ color: '#22C55E' }} />
                         </div>
-                        <h3 className="mb-3 text-white text-2xl">Thank You!</h3>
-                        <p className="text-slate-300 mb-2">
+                        <h3 className="mb-3 text-2xl" style={{ color: '#FFFFFF' }}>Thank You!</h3>
+                        <p className="mb-2" style={{ color: '#94A3B8' }}>
                           I've received your consultation request and will contact you within 24 hours.
                         </p>
-                        <p className="text-slate-300 mb-6">
+                        <p className="mb-6" style={{ color: '#94A3B8' }}>
                           In the meantime, feel free to call me directly at{' '}
-                          <a href="tel:587-568-8591" className="text-amber-400 hover:underline">
+                          <a href="tel:587-568-8591" className="hover:underline" style={{ color: '#C7A76C' }}>
                             587-568-8591
                           </a>
                         </p>
@@ -234,13 +235,15 @@ export function BookConsultation({ onBack }: BookConsultationProps) {
                           <Button 
                             onClick={() => setSubmitted(false)} 
                             variant="outline"
-                            className="border-slate-600 bg-slate-800 text-white hover:bg-slate-700"
+                            className="border text-white hover:bg-slate-800"
+                            style={{ borderColor: '#64748B', backgroundColor: '#334155' }}
                           >
                             Submit Another Request
                           </Button>
                           <Button 
                             onClick={onBack}
-                            className="bg-gradient-to-r from-amber-500 to-amber-600 text-slate-900 hover:from-amber-600 hover:to-amber-700"
+                            className="text-slate-900"
+                            style={{ background: 'linear-gradient(to right, #C7A76C, #B89960)' }}
                           >
                             <ArrowLeft className="w-4 h-4 mr-2" />
                             Back to Home
@@ -250,22 +253,25 @@ export function BookConsultation({ onBack }: BookConsultationProps) {
                     ) : (
                       <>
                         <div className="text-center mb-6">
-                          <h3 className="mb-2 text-white">Let's Get Started</h3>
-                          <p className="text-slate-400">Fill out the form below to book your free consultation</p>
+                          <h3 className="mb-2" style={{ color: '#FFFFFF' }}>Let's Get Started</h3>
+                          <p style={{ color: '#94A3B8' }}>Fill out the form below to book your free consultation</p>
                         </div>
 
                         {/* Progress Indicator */}
                         <div className="mb-8">
                           <div className="flex items-center justify-between mb-2">
-                            <span className="text-sm text-slate-400">Step {formStep} of 2</span>
-                            <span className="text-sm text-slate-400">
+                            <span className="text-sm" style={{ color: '#94A3B8' }}>Step {formStep} of 2</span>
+                            <span className="text-sm" style={{ color: '#94A3B8' }}>
                               {formStep === 1 ? 'Personal Info' : 'Property Details'}
                             </span>
                           </div>
-                          <div className="w-full bg-slate-800 rounded-full h-2">
+                          <div className="w-full rounded-full h-2" style={{ backgroundColor: '#334155' }}>
                             <div 
-                              className="bg-gradient-to-r from-blue-600 to-amber-500 h-2 rounded-full transition-all duration-300"
-                              style={{ width: `${(formStep / 2) * 100}%` }}
+                              className="h-2 rounded-full transition-all duration-300"
+                              style={{ 
+                                width: `${(formStep / 2) * 100}%`,
+                                background: 'linear-gradient(to right, #3B82F6, #C7A76C)'
+                              }}
                             ></div>
                           </div>
                         </div>
@@ -275,7 +281,7 @@ export function BookConsultation({ onBack }: BookConsultationProps) {
                           <form onSubmit={handleNext} className="space-y-5">
                             <div className="grid sm:grid-cols-2 gap-4">
                               <div>
-                                <Label htmlFor="firstName" className="text-slate-300">
+                                <Label htmlFor="firstName" style={{ color: '#94A3B8' }}>
                                   First Name *
                                 </Label>
                                 <Input
@@ -283,12 +289,13 @@ export function BookConsultation({ onBack }: BookConsultationProps) {
                                   required
                                   value={formData.firstName}
                                   onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-                                  className="mt-2 bg-slate-800 border-slate-700 text-white placeholder:text-slate-500"
+                                  className="mt-2 text-white placeholder:text-slate-500"
+                                  style={{ backgroundColor: '#1E293B', borderColor: '#475569' }}
                                   placeholder="John"
                                 />
                               </div>
                               <div>
-                                <Label htmlFor="lastName" className="text-slate-300">
+                                <Label htmlFor="lastName" style={{ color: '#94A3B8' }}>
                                   Last Name *
                                 </Label>
                                 <Input
@@ -296,14 +303,15 @@ export function BookConsultation({ onBack }: BookConsultationProps) {
                                   required
                                   value={formData.lastName}
                                   onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
-                                  className="mt-2 bg-slate-800 border-slate-700 text-white placeholder:text-slate-500"
+                                  className="mt-2 text-white placeholder:text-slate-500"
+                                  style={{ backgroundColor: '#1E293B', borderColor: '#475569' }}
                                   placeholder="Doe"
                                 />
                               </div>
                             </div>
 
                             <div>
-                              <Label htmlFor="email" className="text-slate-300">
+                              <Label htmlFor="email" style={{ color: '#94A3B8' }}>
                                 Email Address *
                               </Label>
                               <Input
@@ -312,13 +320,14 @@ export function BookConsultation({ onBack }: BookConsultationProps) {
                                 required
                                 value={formData.email}
                                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                className="mt-2 bg-slate-800 border-slate-700 text-white placeholder:text-slate-500"
+                                className="mt-2 text-white placeholder:text-slate-500"
+                                style={{ backgroundColor: '#1E293B', borderColor: '#475569' }}
                                 placeholder="john.doe@example.com"
                               />
                             </div>
 
                             <div>
-                              <Label htmlFor="phone" className="text-slate-300">
+                              <Label htmlFor="phone" style={{ color: '#94A3B8' }}>
                                 Phone Number *
                               </Label>
                               <Input
@@ -327,13 +336,14 @@ export function BookConsultation({ onBack }: BookConsultationProps) {
                                 required
                                 value={formData.phone}
                                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                                className="mt-2 bg-slate-800 border-slate-700 text-white placeholder:text-slate-500"
+                                className="mt-2 text-white placeholder:text-slate-500"
+                                style={{ backgroundColor: '#1E293B', borderColor: '#475569' }}
                                 placeholder="(587) 123-4567"
                               />
                             </div>
 
                             <div>
-                              <Label className="mb-3 block text-slate-300">
+                              <Label className="mb-3 block" style={{ color: '#94A3B8' }}>
                                 What's your main goal? *
                               </Label>
                               <RadioGroup
@@ -342,27 +352,27 @@ export function BookConsultation({ onBack }: BookConsultationProps) {
                                 onValueChange={(value) => setFormData({ ...formData, goal: value })}
                                 className="space-y-2"
                               >
-                                <div className="flex items-center space-x-2 p-3 border border-slate-700 rounded-lg hover:bg-slate-800 cursor-pointer">
+                                <div className="flex items-center space-x-2 p-3 border rounded-lg cursor-pointer hover:bg-slate-800" style={{ borderColor: '#475569' }}>
                                   <RadioGroupItem value="buying" id="buying" />
-                                  <Label htmlFor="buying" className="cursor-pointer flex-1 text-slate-300">
+                                  <Label htmlFor="buying" className="cursor-pointer flex-1" style={{ color: '#94A3B8' }}>
                                     🏠 Buying a Home
                                   </Label>
                                 </div>
-                                <div className="flex items-center space-x-2 p-3 border border-slate-700 rounded-lg hover:bg-slate-800 cursor-pointer">
+                                <div className="flex items-center space-x-2 p-3 border rounded-lg cursor-pointer hover:bg-slate-800" style={{ borderColor: '#475569' }}>
                                   <RadioGroupItem value="selling" id="selling" />
-                                  <Label htmlFor="selling" className="cursor-pointer flex-1 text-slate-300">
+                                  <Label htmlFor="selling" className="cursor-pointer flex-1" style={{ color: '#94A3B8' }}>
                                     💰 Selling a Home
                                   </Label>
                                 </div>
-                                <div className="flex items-center space-x-2 p-3 border border-slate-700 rounded-lg hover:bg-slate-800 cursor-pointer">
+                                <div className="flex items-center space-x-2 p-3 border rounded-lg cursor-pointer hover:bg-slate-800" style={{ borderColor: '#475569' }}>
                                   <RadioGroupItem value="both" id="both" />
-                                  <Label htmlFor="both" className="cursor-pointer flex-1 text-slate-300">
+                                  <Label htmlFor="both" className="cursor-pointer flex-1" style={{ color: '#94A3B8' }}>
                                     🔄 Both Buying & Selling
                                   </Label>
                                 </div>
-                                <div className="flex items-center space-x-2 p-3 border border-slate-700 rounded-lg hover:bg-slate-800 cursor-pointer">
+                                <div className="flex items-center space-x-2 p-3 border rounded-lg cursor-pointer hover:bg-slate-800" style={{ borderColor: '#475569' }}>
                                   <RadioGroupItem value="investing" id="investing" />
-                                  <Label htmlFor="investing" className="cursor-pointer flex-1 text-slate-300">
+                                  <Label htmlFor="investing" className="cursor-pointer flex-1" style={{ color: '#94A3B8' }}>
                                     📈 Investment Property
                                   </Label>
                                 </div>
@@ -370,7 +380,7 @@ export function BookConsultation({ onBack }: BookConsultationProps) {
                             </div>
 
                             <div>
-                              <Label className="mb-3 block text-slate-300">
+                              <Label className="mb-3 block" style={{ color: '#94A3B8' }}>
                                 Is this your first house? *
                               </Label>
                               <RadioGroup
@@ -379,15 +389,15 @@ export function BookConsultation({ onBack }: BookConsultationProps) {
                                 onValueChange={(value) => setFormData({ ...formData, firstHouse: value })}
                                 className="space-y-2"
                               >
-                                <div className="flex items-center space-x-2 p-3 border border-slate-700 rounded-lg hover:bg-slate-800 cursor-pointer">
+                                <div className="flex items-center space-x-2 p-3 border rounded-lg cursor-pointer hover:bg-slate-800" style={{ borderColor: '#475569' }}>
                                   <RadioGroupItem value="first" id="first" />
-                                  <Label htmlFor="first" className="cursor-pointer flex-1 text-slate-300">
+                                  <Label htmlFor="first" className="cursor-pointer flex-1" style={{ color: '#94A3B8' }}>
                                     🏠 First House (First-time buyer)
                                   </Label>
                                 </div>
-                                <div className="flex items-center space-x-2 p-3 border border-slate-700 rounded-lg hover:bg-slate-800 cursor-pointer">
+                                <div className="flex items-center space-x-2 p-3 border rounded-lg cursor-pointer hover:bg-slate-800" style={{ borderColor: '#475569' }}>
                                   <RadioGroupItem value="second" id="second" />
-                                  <Label htmlFor="second" className="cursor-pointer flex-1 text-slate-300">
+                                  <Label htmlFor="second" className="cursor-pointer flex-1" style={{ color: '#94A3B8' }}>
                                     🏘️ Second House or More
                                   </Label>
                                 </div>
@@ -396,15 +406,16 @@ export function BookConsultation({ onBack }: BookConsultationProps) {
 
                             <Button 
                               type="submit" 
-                              className="w-full bg-gradient-to-r from-blue-600 to-amber-500 hover:from-blue-700 hover:to-amber-600 shadow-lg" 
+                              className="w-full shadow-lg" 
                               size="lg"
+                              style={{ background: 'linear-gradient(to right, #3B82F6, #C7A76C)' }}
                             >
                               Next Step
                               <ChevronRight className="w-5 h-5 ml-2" />
                             </Button>
 
-                            <div className="bg-slate-800/50 p-4 rounded-lg border border-slate-700">
-                              <p className="text-sm text-slate-400 text-center">
+                            <div className="p-4 rounded-lg border" style={{ backgroundColor: 'rgba(30, 41, 59, 0.5)', borderColor: '#475569' }}>
+                              <p className="text-sm text-center" style={{ color: '#94A3B8' }}>
                                 <Shield className="w-4 h-4 inline mr-1" />
                                 100% Confidential. No spam, ever.
                               </p>
@@ -416,7 +427,7 @@ export function BookConsultation({ onBack }: BookConsultationProps) {
                         {formStep === 2 && (
                           <form onSubmit={handleSubmit} className="space-y-5">
                             <div>
-                              <Label htmlFor="budget" className="mb-3 block text-slate-300">
+                              <Label htmlFor="budget" className="mb-3 block" style={{ color: '#94A3B8' }}>
                                 Budget (CAD) *
                               </Label>
                               <Select
@@ -424,7 +435,7 @@ export function BookConsultation({ onBack }: BookConsultationProps) {
                                 value={formData.budget}
                                 onValueChange={(value) => setFormData({ ...formData, budget: value })}
                               >
-                                <SelectTrigger className="mt-2 bg-slate-800 border-slate-700 text-white">
+                                <SelectTrigger className="mt-2 text-white" style={{ backgroundColor: '#1E293B', borderColor: '#475569' }}>
                                   <SelectValue placeholder="Select your budget range" />
                                 </SelectTrigger>
                                 <SelectContent>
@@ -439,7 +450,7 @@ export function BookConsultation({ onBack }: BookConsultationProps) {
                             </div>
 
                             <div>
-                              <Label htmlFor="timeline" className="mb-3 block text-slate-300">
+                              <Label htmlFor="timeline" className="mb-3 block" style={{ color: '#94A3B8' }}>
                                 Timeline *
                               </Label>
                               <Select
@@ -447,7 +458,7 @@ export function BookConsultation({ onBack }: BookConsultationProps) {
                                 value={formData.timeline}
                                 onValueChange={(value) => setFormData({ ...formData, timeline: value })}
                               >
-                                <SelectTrigger className="mt-2 bg-slate-800 border-slate-700 text-white">
+                                <SelectTrigger className="mt-2 text-white" style={{ backgroundColor: '#1E293B', borderColor: '#475569' }}>
                                   <SelectValue placeholder="When are you planning to move?" />
                                 </SelectTrigger>
                                 <SelectContent>
@@ -461,7 +472,7 @@ export function BookConsultation({ onBack }: BookConsultationProps) {
                             </div>
 
                             <div>
-                              <Label htmlFor="location" className="text-slate-300">
+                              <Label htmlFor="location" style={{ color: '#94A3B8' }}>
                                 Preferred Location(s) *
                               </Label>
                               <Input
@@ -469,13 +480,14 @@ export function BookConsultation({ onBack }: BookConsultationProps) {
                                 required
                                 value={formData.location}
                                 onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                                className="mt-2 bg-slate-800 border-slate-700 text-white placeholder:text-slate-500"
+                                className="mt-2 text-white placeholder:text-slate-500"
+                                style={{ backgroundColor: '#1E293B', borderColor: '#475569' }}
                                 placeholder="e.g., Downtown Edmonton, Windermere, etc."
                               />
                             </div>
 
                             <div>
-                              <Label htmlFor="propertyType" className="mb-3 block text-slate-300">
+                              <Label htmlFor="propertyType" className="mb-3 block" style={{ color: '#94A3B8' }}>
                                 Property Type *
                               </Label>
                               <Select
@@ -483,7 +495,7 @@ export function BookConsultation({ onBack }: BookConsultationProps) {
                                 value={formData.propertyType}
                                 onValueChange={(value) => setFormData({ ...formData, propertyType: value })}
                               >
-                                <SelectTrigger className="mt-2 bg-slate-800 border-slate-700 text-white">
+                                <SelectTrigger className="mt-2 text-white" style={{ backgroundColor: '#1E293B', borderColor: '#475569' }}>
                                   <SelectValue placeholder="Select property type" />
                                 </SelectTrigger>
                                 <SelectContent>
@@ -500,14 +512,15 @@ export function BookConsultation({ onBack }: BookConsultationProps) {
                             </div>
 
                             <div>
-                              <Label htmlFor="additionalInfo" className="text-slate-300">
+                              <Label htmlFor="additionalInfo" style={{ color: '#94A3B8' }}>
                                 Additional Information (Optional)
                               </Label>
                               <Textarea
                                 id="additionalInfo"
                                 value={formData.additionalInfo}
                                 onChange={(e) => setFormData({ ...formData, additionalInfo: e.target.value })}
-                                className="mt-2 bg-slate-800 border-slate-700 text-white placeholder:text-slate-500 min-h-[100px]"
+                                className="mt-2 text-white placeholder:text-slate-500 min-h-[100px]"
+                                style={{ backgroundColor: '#1E293B', borderColor: '#475569' }}
                                 placeholder="Any specific requirements or questions..."
                               />
                             </div>
@@ -517,23 +530,25 @@ export function BookConsultation({ onBack }: BookConsultationProps) {
                                 type="button" 
                                 variant="outline" 
                                 onClick={handleBack}
-                                className="w-full sm:w-1/3 border-slate-600 bg-slate-800 text-white hover:bg-slate-700"
+                                className="w-full sm:w-1/3 text-white hover:bg-slate-800"
+                                style={{ borderColor: '#64748B', backgroundColor: '#334155' }}
                               >
                                 <ArrowLeft className="w-4 h-4 mr-2" />
                                 Back
                               </Button>
                               <Button 
                                 type="submit" 
-                                className="w-full sm:w-2/3 bg-gradient-to-r from-blue-600 to-amber-500 hover:from-blue-700 hover:to-amber-600 shadow-lg" 
+                                className="w-full sm:w-2/3 shadow-lg" 
                                 size="lg"
+                                style={{ background: 'linear-gradient(to right, #3B82F6, #C7A76C)' }}
                               >
                                 Submit Request
                                 <CheckCircle className="w-5 h-5 ml-2" />
                               </Button>
                             </div>
 
-                            <div className="bg-slate-800/50 p-4 rounded-lg border border-slate-700">
-                              <p className="text-sm text-slate-400 text-center">
+                            <div className="p-4 rounded-lg border" style={{ backgroundColor: 'rgba(30, 41, 59, 0.5)', borderColor: '#475569' }}>
+                              <p className="text-sm text-center" style={{ color: '#94A3B8' }}>
                                 <Clock className="w-4 h-4 inline mr-1" />
                                 Response within 24 hours guaranteed
                               </p>
@@ -546,32 +561,32 @@ export function BookConsultation({ onBack }: BookConsultationProps) {
                 </Card>
 
                 {/* Mobile "What to Expect" */}
-                <Card className="bg-white/5 border-white/10 backdrop-blur-sm lg:hidden mt-6">
+                <Card className="border lg:hidden mt-6" style={{ backgroundColor: 'rgba(199, 167, 108, 0.08)', borderColor: 'rgba(199, 167, 108, 0.2)' }}>
                   <CardContent className="p-6">
-                    <h4 className="text-white mb-4 flex items-center gap-2">
-                      <Calendar className="w-5 h-5 text-amber-400" />
+                    <h4 className="mb-4 flex items-center gap-2" style={{ color: '#FFFFFF' }}>
+                      <Calendar className="w-5 h-5" style={{ color: '#C7A76C' }} />
                       What to Expect
                     </h4>
                     <ul className="space-y-3 text-sm">
                       <li className="flex items-start gap-2">
-                        <CheckCircle className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-slate-300">Response within 24 hours</span>
+                        <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: '#C7A76C' }} />
+                        <span style={{ color: '#94A3B8' }}>Response within 24 hours</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <CheckCircle className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-slate-300">30-minute free consultation</span>
+                        <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: '#C7A76C' }} />
+                        <span style={{ color: '#94A3B8' }}>30-minute free consultation</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <CheckCircle className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-slate-300">Personalized market insights</span>
+                        <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: '#C7A76C' }} />
+                        <span style={{ color: '#94A3B8' }}>Personalized market insights</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <CheckCircle className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-slate-300">No obligation or pressure</span>
+                        <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: '#C7A76C' }} />
+                        <span style={{ color: '#94A3B8' }}>No obligation or pressure</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <CheckCircle className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-slate-300">Available evenings & weekends</span>
+                        <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: '#C7A76C' }} />
+                        <span style={{ color: '#94A3B8' }}>Available evenings & weekends</span>
                       </li>
                     </ul>
                   </CardContent>
@@ -583,21 +598,21 @@ export function BookConsultation({ onBack }: BookConsultationProps) {
       </section>
 
       {/* Trust Indicators Footer */}
-      <section className="py-8 bg-slate-950 border-t border-slate-800">
+      <section className="py-8 border-t" style={{ backgroundColor: '#141819', borderColor: 'rgba(199, 167, 108, 0.2)' }}>
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-3 gap-4 text-center">
               <div className="p-4">
-                <div className="text-2xl md:text-3xl text-amber-400 mb-1">2</div>
-                <p className="text-slate-400 text-xs md:text-sm">Years Experience</p>
+                <div className="text-2xl md:text-3xl mb-1" style={{ color: '#C7A76C' }}>2</div>
+                <p className="text-xs md:text-sm" style={{ color: '#94A3B8' }}>Years Experience</p>
               </div>
               <div className="p-4">
-                <div className="text-2xl md:text-3xl text-amber-400 mb-1">50+</div>
-                <p className="text-slate-400 text-xs md:text-sm">Happy Clients</p>
+                <div className="text-2xl md:text-3xl mb-1" style={{ color: '#C7A76C' }}>50+</div>
+                <p className="text-xs md:text-sm" style={{ color: '#94A3B8' }}>Happy Clients</p>
               </div>
               <div className="p-4">
-                <div className="text-2xl md:text-3xl text-amber-400 mb-1">$25M+</div>
-                <p className="text-slate-400 text-xs md:text-sm">In Sales</p>
+                <div className="text-2xl md:text-3xl mb-1" style={{ color: '#C7A76C' }}>$25M+</div>
+                <p className="text-xs md:text-sm" style={{ color: '#94A3B8' }}>In Sales</p>
               </div>
             </div>
           </div>
