@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Phone, Mail, MapPin, Calendar, CheckCircle, Home, TrendingUp, Users, Award, Clock, Shield, Star, DollarSign, FileText, Search, ChevronDown, ChevronRight, ArrowLeft, Building2, Target, Sparkles } from 'lucide-react';
+import { Phone, Mail, MapPin, Calendar,Loader2 , CheckCircle, Home, TrendingUp, Users, Award, Clock, Shield, Star, DollarSign, FileText, Search, ChevronDown, ChevronRight, ArrowLeft, Building2, Target, Sparkles } from 'lucide-react';
 import { Button } from './components/ui/button';
 import { Input } from './components/ui/input';
 import { Textarea } from './components/ui/textarea';
