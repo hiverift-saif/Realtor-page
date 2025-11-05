@@ -57,71 +57,64 @@ export function BookConsultation({ onBack }: BookConsultationProps) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
- const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
 
-  const submitBtn = submitBtnRef.current;
-  if (!submitBtn) {
-    console.error('Submit button not found');
-    return;
-  }
+    const submitBtn = submitBtnRef.current;
+    if (!submitBtn) return;
 
-  const originalText = submitBtn.innerHTML;
-  submitBtn.disabled = true;
-  submitBtn.innerHTML = `
-    Submitting...
-    <svg class="animate-spin w-5 h-5 ml-2 inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-    </svg>
-  `;
+    const originalText = submitBtn.innerHTML;
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = `
+      Submitting...
+      <svg class="animate-spin w-5 h-5 ml-2 inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+      </svg>
+    `;
 
-  const payload = {
-    formType: "rightpricepumps",
-    firstName: formData.firstName.trim(),
-    lastName: formData.lastName.trim(),
-    email: formData.email.trim(),
-    phone: formData.phone.trim(),
-    goal: formData.goal,
-    firstHouse: formData.firstHouse,
-    budget: formData.budget,
-    timeline: formData.timeline,
-    location: formData.location.trim(),
-    propertyType: formData.propertyType,
-    additionalInfo: formData.additionalInfo.trim()
-  };
+    const payload = {
+      formType: "rightpricepumps", // ← YE MISSING THA!
+      firstName: formData.firstName.trim(),
+      lastName: formData.lastName.trim(),
+      email: formData.email.trim(),
+      phone: formData.phone.trim(),
+      goal: formData.goal,
+      firstHouse: formData.firstHouse,
+      budget: formData.budget,
+      timeline: formData.timeline,
+      location: formData.location.trim(),
+      propertyType: formData.propertyType,
+      additionalInfo: formData.additionalInfo.trim()
+    };
 
-  console.log('Sending payload:', payload); // DEBUG
+    console.log('Sending payload:', payload);
 
-  try {
-    const response = await fetch('https://cakistockmarket.com/api/v1/contact/createRightPricePumpsContact', {
-      method: 'POST',
-      mode: 'cors',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(payload),
-    });
+    try {
+      const response = await fetch('https://cakistockmarket.com/api/v1/contact/createRightPricePumpsContact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
 
-    const data = await response.json();
-    console.log('API Response:', data); // DEBUG
+      const data = await response.json();
+      console.log('API Response:', data);
 
-    if (response.ok && data.statusCode === 201) {
-      setSubmitted(true);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-      console.error('API Failed:', data);
-      alert(data.message || 'Submission failed. See console.');
+      if (response.ok && data.statusCode === 201) {
+        setSubmitted(true);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        throw new Error(data.message || 'Submission failed');
+      }
+    } catch (err: any) {
+      console.error('Submission Error:', err);
+      alert(err.message || 'Failed to submit. Please try again or contact support.');
       submitBtn.disabled = false;
       submitBtn.innerHTML = originalText;
     }
-  } catch (err) {
-    console.error('Network/Fetch Error:', err);
-    alert('Network error. Open DevTools (F12) → Console tab and send me screenshot.');
-    submitBtn.disabled = false;
-    submitBtn.innerHTML = originalText;
-  }
-};
+  };
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#1C1C1C' }}>
@@ -152,7 +145,7 @@ export function BookConsultation({ onBack }: BookConsultationProps) {
       {/* Main Content */}
       <section className="py-8 md:py-16">
         <div className="container mx-auto px-4">
-          <div className=" max-w-5xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             {/* Page Header */}
             <div className="text-center mb-8 md:mb-12">
               <Badge className="mb-4 border-0" style={{ backgroundColor: '#C7A76C', color: '#141819' }}>
@@ -294,7 +287,15 @@ export function BookConsultation({ onBack }: BookConsultationProps) {
                         </p>
                         <div className="flex flex-col sm:flex-row gap-3 justify-center">
                           <Button 
-                            onClick={() => setSubmitted(false)} 
+                            onClick={() => {
+                              setSubmitted(false);
+                              setFormStep(1);
+                              setFormData({
+                                firstName: '', lastName: '', email: '', phone: '',
+                                goal: '', firstHouse: '', budget: '', timeline: '',
+                                location: '', propertyType: '', additionalInfo: ''
+                              });
+                            }} 
                             variant="outline"
                             className="border text-white hover:bg-slate-800"
                             style={{ borderColor: '#64748B', backgroundColor: '#334155' }}
@@ -597,16 +598,24 @@ export function BookConsultation({ onBack }: BookConsultationProps) {
                                 <ArrowLeft className="w-4 h-4 mr-2" />
                                 Back
                               </Button>
-                              <Button 
-                                type="submit" 
-                                ref={submitBtnRef}
-                                className="w-full sm:w-2/3 shadow-lg" 
-                                size="lg"
-                                style={{ background: 'linear-gradient(to right, #3B82F6, #C7A76C)' }}
-                              >
-                                Submit Request
-                                <CheckCircle className="w-5 h-5 ml-2" />
-                              </Button>
+
+
+                     <button
+  type="submit"
+  ref={submitBtnRef}
+  className="w-full sm:w-2/3 shadow-lg flex items-center justify-center gap-2 px-6 py-3 text-lg font-medium rounded-lg transition-all disabled:opacity-70"
+  style={{ 
+    background: 'linear-gradient(to right, #3B82F6, #C7A76C)',
+    color: 'white'
+  }}
+  disabled={false}
+>
+  Submit Request
+  <CheckCircle className="w-5 h-5" />
+</button>
+
+
+
                             </div>
 
                             <div className="p-4 rounded-lg border" style={{ backgroundColor: 'rgba(30, 41, 59, 0.5)', borderColor: '#475569' }}>
