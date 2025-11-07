@@ -155,10 +155,11 @@ export default function App() {
     }
   };
 
-  useEffect(() => {
-    const timer = setTimeout(() => setShowPopup(true), 1500);
-    return () => clearTimeout(timer);
-  }, []);
+useEffect(() => {
+  const timer = setTimeout(() => setShowPopup(true), 15000);  // 15 sec
+  return () => clearTimeout(timer);
+}, []);
+
 
   if (currentPage === "booking") {
     return <BookConsultation onBack={() => setCurrentPage("home")} />;
